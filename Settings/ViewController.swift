@@ -15,8 +15,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
-        self.navigationItem.title = "Table"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.title = "Settings"
+        //self.navigationController?.navigationBar.prefersLargeTitles = true
 
         self.view.addSubview(self.tableView)
         self.tableView.register(TableViewCell.self, forCellReuseIdentifier: "TableViewCell")
@@ -87,7 +87,7 @@ extension ViewController: UITableViewDataSource {
 
         content.text = setChose.name
         content.image = setChose.imageMain
-        content.imageProperties.maximumSize = CGSize(width: 50, height: 50)
+        content.imageProperties.maximumSize = CGSize(width: 30, height: 30)
 
         cell.contentConfiguration = content
 
