@@ -13,6 +13,11 @@ struct Setting {
     let style: Style
     let block: Block
     let imageMain: UIImage?
+
+    static func getSectionsCount() -> Int {
+        let set = Set(settingsList.map{$0.block})
+        return set.count
+    }
 }
 
 enum Style {
@@ -24,6 +29,8 @@ enum Block {
     case fast
     case notifications
     case main
+
+    static let allValues = [Block.fast, Block.notifications, Block.main]
 }
 
 var settingsList = [Setting(name: "Airplane Mode",

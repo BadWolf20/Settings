@@ -13,6 +13,7 @@
 		301A51B42789A5B4003459C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301A51B32789A5B4003459C9 /* Assets.xcassets */; };
 		301A51B72789A5B4003459C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301A51B52789A5B4003459C9 /* LaunchScreen.storyboard */; };
 		301A51BF278AE422003459C9 /* SettingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301A51BE278AE422003459C9 /* SettingsList.swift */; };
+		30A29684278D98DA006B5ABC /* WiFiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A29683278D98DA006B5ABC /* WiFiViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		301A51B62789A5B4003459C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		301A51B82789A5B4003459C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		301A51BE278AE422003459C9 /* SettingsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsList.swift; sourceTree = "<group>"; };
+		30A29683278D98DA006B5ABC /* WiFiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				301A51BE278AE422003459C9 /* SettingsList.swift */,
 				301A51AA2789A5B2003459C9 /* AppDelegate.swift */,
 				301A51AE2789A5B2003459C9 /* ViewController.swift */,
+				30A29683278D98DA006B5ABC /* WiFiViewController.swift */,
 				301A51B02789A5B2003459C9 /* Main.storyboard */,
 				301A51B32789A5B4003459C9 /* Assets.xcassets */,
 				301A51B52789A5B4003459C9 /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				301A51AF2789A5B2003459C9 /* ViewController.swift in Sources */,
 				301A51AB2789A5B2003459C9 /* AppDelegate.swift in Sources */,
+				30A29684278D98DA006B5ABC /* WiFiViewController.swift in Sources */,
 				301A51BF278AE422003459C9 /* SettingsList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
