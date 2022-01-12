@@ -51,16 +51,13 @@ class ViewController: UIViewController {
 
     }
 
-
     private func updateLayout(with size: CGSize) {
-       self.tableView.frame = CGRect.init(origin: .zero, size: size)
+       tableView.frame = CGRect.init(origin: .zero, size: size)
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-       super.viewWillTransition(to: size, with: coordinator)
-//       coordinator.animate(alongsideTransition: { (contex) in
-//           self.updateLayout(with: size)
-//       }, completion: nil)
+        super.viewWillTransition(to: size, with: coordinator)
+        updateLayout(with: size)
     }
 }
 
@@ -71,8 +68,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
         tableView.deselectRow(at: indexPath, animated: true)
 
         print("You push '\(settingsList[getSelectedRowNumber()].name)' button")
-        
-        navigationController?.pushViewController(WiFiViewController(), animated: true)
+
+        moveToSetttingView(settingsList[getSelectedRowNumber()].name)
 
         func getSelectedRowNumber() -> Int{
             var selectedRowNumber = Int()
@@ -100,6 +97,13 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
             return out
         }
 
+    }
+
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if indexPath.row == 0 && indexPath.section == 0{
+            return nil
+        }
+        return indexPath
     }
 
 
@@ -150,26 +154,24 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
         switchObj.isOn = false
         switchObj.addTarget(self, action: #selector(tog(_:)), for: .valueChanged)
 
-        let imageView = UIImageView(frame: CGRect(x: 1, y: 1, width: 10, height: 15))
-        imageView.image = UIImage(named: "Move")
-
         if setChose.style == .check {
             cell.accessoryView = switchObj
         }
         if setChose.style == .move {
-            //cell.accessoryView = imageView
             cell.accessoryType = .disclosureIndicator
         }
 
         return cell
     }
 
-
-//    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        print("ww")
-//    }
-
+    func moveToSetttingView(_ pageName: String) {
+        switch pageName{
+        case "Wi-Fi":
+            navigationController?.pushViewController(WiFiViewController(), animated: true)
+        default:
+            print("No page")
+        }
+    }
 
     @objc private func tog(_: UISwitch){
         print("swoth")
@@ -181,7 +183,5 @@ class TableViewCell: UITableViewCell {
         super.prepareForReuse()
         self.accessoryType = .none
     }
-
 }
-
 
