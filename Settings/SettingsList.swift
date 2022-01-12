@@ -18,6 +18,26 @@ struct Setting {
         let set = Set(settingsList.map{$0.block})
         return set.count
     }
+
+    static func getSettingsList(block: Block) -> [Setting] {
+        var out = [Setting]()
+        for i in settingsList{
+            if i.block == block {
+                out.append(i)
+            }
+        }
+        return out
+    }
+
+    static func getSettingsSectionLenght(block: Block) -> Int {
+        var out = Int()
+        for i in settingsList{
+            if i.block == block {
+                out += 1
+            }
+        }
+        return out
+    }
 }
 
 enum Style {
@@ -59,26 +79,6 @@ var settingsList = [Setting(name: "Airplane Mode",
                             style: .move,       block: .main,    imageMain: nil),
                     Setting(name: "Wallpaper",
                             style: .move,       block: .main,    imageMain: nil)
-                    
 ]
 
-func getSettingsList(block: Block) -> [Setting] {
-    var out = [Setting]()
-    for i in settingsList{
-        if i.block == block {
-            out.append(i)
-        }
-    }
-    return out
-}
-
-func getSettingsSecttionLenght(block: Block) -> Int {
-    var out = Int()
-    for i in settingsList{
-        if i.block == block {
-            out += 1
-        }
-    }
-    return out
-}
 
