@@ -55,7 +55,7 @@ class WiFiViewController: UIViewController{
     // MARK: - Actions
 
     @objc private func tapButtonAction(){
-        //navigationController?.pushViewController(FirstChildViewController(), animated: true)
+        navigationController?.popViewController(animated: true)
     }
 }
 
